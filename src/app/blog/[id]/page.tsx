@@ -137,8 +137,9 @@ const BlogPage = () => {
           }
         );
         toast.success(data.message);
-        router.push("/blogs");
+
         setTimeout(() => {
+          router.push("/blogs");
           fetchBlogs();
         }, 2000);
       } catch (error) {
@@ -185,7 +186,7 @@ const BlogPage = () => {
 
   useEffect(() => {
     fetchSingleBlog();
-  }, [fetchSingleBlog, id]);
+  }, [id]);
 
   if (!blog) {
     return <Loading />;
